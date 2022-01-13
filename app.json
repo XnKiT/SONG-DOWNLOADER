@@ -1,0 +1,32 @@
+{
+    "name": "TELEGRAM SONG DOWNLOADER BOT",
+    "description": "A SIMPLE TELEGRAM BOT TO DOWNLOAD SONG FROM YOUTUBE,MADE WITH LOVE BY ©LEGEND-ANKIT™",
+    "logo": "https://telegra.ph/file/b002d63974bd05ea7a336.jpg",
+    "keywords": [
+        "Ankit",
+        "Song Downloader",
+        "Telegram Bot"
+    ],
+    "repository": "https://github.com/LEGEND-ANKIT/TELEGRAM-SONG-DOWNLOADER-BOT",
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your Telegram Bot Token from @BotFather",
+            "value": ""
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
