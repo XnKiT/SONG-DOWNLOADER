@@ -1,3 +1,5 @@
+# ©LEGEND-ANKIT™
+# < ANKIT KUMAR >
 import os
 import random
 import time
@@ -13,7 +15,7 @@ from config import API_ID, API_HASH, BOT_TOKEN
 
 
 # logging
-bot = Client(
+ankit = Client(
    "Song Downloader",
    api_id=API_ID,
    api_hash=API_HASH,
@@ -21,22 +23,22 @@ bot = Client(
 )
 
 
-@bot.on_message(filters.command("start") & ~filters.edited)
+@ankit.on_message(filters.command("start") & ~filters.edited)
 async def start(_, message):
    if message.chat.type == 'private':
        await message.reply("**Hey There, I'm a song downloader bot.\nUsage:** `/song [query]`",   
                             reply_markup=InlineKeyboardMarkup(
                                 [[
                                      InlineKeyboardButton(
-                                            "🔰Developer🔰", url="https://github.com/LEGEND-ANKIT")
+                                             "🔰Developer🔰", url="https://github.com/LEGEND-ANKIT")
                                     ]]
                             ))
    else:
-      await message.reply("**Song Downloader Bot is Online ✨**")
+      await message.reply("**Song DL Bot is Online ✨**")
 
 
 
-@bot.on_message(filters.command("song") & ~filters.edited)
+@ankit.on_message(filters.command("song") & ~filters.edited)
 async def song(_, message):
     if len(message.command) < 2:
        return await message.reply("**Usage:**\n - `/song [query]`")
@@ -101,5 +103,5 @@ async def song(_, message):
     except Exception as e:
         print(e)
 
-bot.start()
+ankit.start()
 idle()
